@@ -30,6 +30,64 @@ Technologies used in this project.
 
 This project is a simple Prisma example using MongoDB.
 
+Test this project.
+
+- needs MongoDB
+- create `.env` file with the same value from `.env.sample` and configure your MONGO URL
+- yarn or npm install
+- yarn dev
+- execute routes in your `insomnia`
+
+
+
+---
+
+Create user.
+```js
+POST http://localhost:3000/users
+
+{
+	"name": "Rich",
+	"email": "hello@prisma.com"
+}
+
+```
+
+---
+
+Create post from user.
+```js
+POST http://localhost:3000/posts
+
+{
+	"title": "My first post",
+	"body": "Lots of really interesting stuff",
+	"slug": "my-first-post",
+	"userId": #userId
+}
+
+```
+
+---
+
+Create comment from post.
+```js
+POST http://localhost:3000/comments
+
+{
+	"comment": "Great post!",
+	"postId": #postId
+}
+```
+
+---
+
+Find all users with posts and comments.
+```js
+GET http://localhost:3000/users
+```
+
+
 ## 📝 License
 
 Used MIT license.
